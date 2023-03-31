@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-import {MONGODB_URI} from "../helper/BASE_CONFIG.js"
 
 function initDB(){
     if(mongoose.connections[0].readyState){
@@ -7,11 +6,8 @@ function initDB(){
         return
     }
 
-    mongoose.connect("mongodb+srv://godprofit:TjI17M9dNT6VMeVQ@godprofit.vfmhzn9.mongodb.net/?retryWrites=true&w=majority",{
-        useNewUrlParser : true,
-        useUnifiedTopology:true
-
-    })
+    mongoose.connect("mongodb+srv://letsdoit:1234@cluster0.ecjw8hy.mongodb.net/?retryWrites=true&w=majority")
+    
     mongoose.connection.on('connected',()=>{
         console.log('Database Connected Successfully :)')
     })
